@@ -14,6 +14,9 @@ public class ModItems {
     public static final RegistryObject<Item> DNA = ITEMS.register("dna",
             () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> RNA = ITEMS.register("rna",
+            () -> new Item(new Item.Properties()));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
