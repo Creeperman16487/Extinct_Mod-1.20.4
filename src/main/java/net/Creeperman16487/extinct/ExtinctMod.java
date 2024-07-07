@@ -1,6 +1,7 @@
 package net.Creeperman16487.extinct;
 
 import com.mojang.logging.LogUtils;
+import net.Creeperman16487.extinct.item.ModCreativeModTabs;
 import net.Creeperman16487.extinct.item.ModItems;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -27,6 +28,7 @@ public class ExtinctMod
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        ModCreativeModTabs.register(modEventBus);
         ModItems.register(modEventBus);
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -48,6 +50,7 @@ public class ExtinctMod
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS)
         {
             event.accept(ModItems.DNA);
+            event.accept(ModItems.RNA);
         }
     }
 
